@@ -5,10 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <section>
+        <div class="side" id="side1"></div>
+        <div class="side" id="side2"></div>
+    </section>
+    <div class="container">
+        <div class="contenido">
+            <div class="card">
+                <div class="img">
+                    <img src="file (1).webp" alt="">
+                </div>
+                <div class="texto">
+                    <h2>Silky Sands, Turquoise Surf</h2>
+                    <p><i class="far fa-calendar-alt"><span>28 de junio de 2020</span></i></p>
+                    <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading. Welcome to your blog po...</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="contenido">
+            <div class="card">
+                <div class="img">
+                    <img src="img2.webp" alt="">
+                </div>
+                <div class="texto">
+                    <h2>The Mexico Diary, Day 1: Oaxaca</h2>
+                    <p><i class="far fa-calendar-alt"><span>28 de junio de 2020</span></i></p>
+                    <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading. Welcome to your blog po...</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="contenido">
+            <div class="card">
+                <div class="img">
+                    <img src="img3.webp" alt="">
+                </div>
+                <div class="texto">
+                    <h2>The Girl from Ipanema</h2>
+                    <p><i class="far fa-calendar-alt"><span>28 de junio de 2020</span></i></p>
+                    <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading. Welcome to your blog po...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let side1 = document.getElementById("side1")
+        window.addEventListener("scroll", function() {
+            side1.style.left = -window.pageYOffset + "px";
+        })
+
+        let side2 = document.getElementById("side2")
+        window.addEventListener("scroll", function() {
+            side2.style.left = window.pageYOffset + "px";
+        })
+    </script>
 </body>
-
-</html>
