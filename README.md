@@ -3,9 +3,9 @@
 ![last commit](https://img.shields.io/github/last-commit/dylanbatar/ten-project-backend-and-frontend?style=plastic) ![contributors](https://img.shields.io/github/contributors/dylanbatar/ten-project-backend-and-frontend)  ![twitter follow](https://img.shields.io/twitter/follow/dylanbatar?style=social)![followers github](https://img.shields.io/github/followers/dylanbatar?style=social)
 
 
-in this repository you find exercises of applications. you will find folders of frontend and backend aplications created
+In this repository you find exercises of applications. You will find folders of frontend and backend aplications created
 
-Note: **Idea of this is that my collabolator [Jmestrelozano](https://github.com/Jmestrelozano) learn more about frontend developer and i learn more abour backend developer**
+Note: **Idea of this is that my collabolator [Jmestrelozano](https://github.com/Jmestrelozano) learn more about frontend developer and I learn more about backend developer**
 
 ## 📑 Tablet of Content 
 
