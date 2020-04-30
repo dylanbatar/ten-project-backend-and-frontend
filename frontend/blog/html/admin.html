@@ -2,12 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="../estilos/admin.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            toolbar: "image",
+            plugins: "image imagetools",
+            height: 300,
+            menubar: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
+    </script>
+
 </head>
 
 <body>
+    <div class="container">
+        <div class="six columns">
+            <h1>Blogs</h1>
+            <form action="#" id="formulario" class="form">
+                <textarea id="mytextarea">Hello, World!</textarea>
+                <input type="submit" class="boton" value="CREAR POST">
+            </form>
+        </div>
+        <div class="six columns ">
+
+
+            <h2>Lista de datos</h2>
+            <div class="contenedor" id="lista-notas"></div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        let form = document.getElementById("formulario")
+        let lista = document.getElementById("lista-notas");
+
+        form.addEventListener("submit", enviarDatos);
+        lista.addEventListener("click", eliminarDatos)
+
+        function enviarDatos() {
+            let campoTexto = document.querySelector("#mytextarea").value;
+
+            let div = document.createElement("div")
+            let h2 = document.createElement("h2")
+            let btnBorrar = document.createElement("button")
+            let btnActualizar = document.createElement("button")
+            lista.appendChild(div)
+            div.appendChild(h2)
+            div.appendChild(btnBorrar)
+            div.appendChild(btnActualizar)
+            h2.classList = ("act")
+            div.classList = ("content")
+            btnBorrar.id = ("borrar-dato")
+            btnBorrar.classList = ("fas fa-times icono")
+            btnActualizar.classList = ("fas fa-redo-alt icono")
+            h2.innerHTML += campoTexto
+
+        }
+
+        function eliminarDatos() {
+            let btnBorrar = document.querySelector("#borrar-dato")
+
+            let brn = btnBorrar.parentElement.parentElement.children;
+            for (let i = 1; i <= brn.length; i++) {
+                let revisa = i;
+                let eliminar = brn[i].remove();
+                console.log(revisa)
+            }
+
+
+        }
+    </script>
 
 </body>
 
