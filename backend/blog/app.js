@@ -5,7 +5,6 @@ const express = require("express");
 const app = express();
 
 // CONFIG
-
 app.use(cors({ origin: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

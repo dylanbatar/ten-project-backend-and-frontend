@@ -1,13 +1,14 @@
+require("../config/config");
 const MONGOOSE = require("mongoose");
 
 const OPTIONS = {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify:false
+  useFindAndModify: false,
 };
 
-MONGOOSE.connect("mongodb://localhost:27017/blog", OPTIONS)
+MONGOOSE.connect(process.env.URI_DB, OPTIONS)
   .then(() => {
     console.log("BD IS WORK");
   })
