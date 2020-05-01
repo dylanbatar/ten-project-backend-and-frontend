@@ -7,10 +7,12 @@ let userController = {};
 userController.registerUser = async (req, res) => {
   let { username, email, password } = req.body;
 
+  let hash = BCRYPT.hashSync(password, 10);
+
   const NEW_USER = await new USER({
     username,
     email,
-    password: BCRYPT.hashSync(password, 10),
+    password: hash,
   });
 
   NEW_USER.save()
@@ -43,6 +45,8 @@ userController.loginUser = async (req, res) => {
           message: "Email o username not found",
         });
       }
+
+      console.log(BCRYPT.compareSync(password, user.password));
 
       if (!BCRYPT.compareSync(password, user.password)) {
         return res.json({ ok: false, data: null, message: "Password error" });
