@@ -46,8 +46,6 @@ userController.loginUser = async (req, res) => {
         });
       }
 
-      console.log(BCRYPT.compareSync(password, user.password));
-
       if (!BCRYPT.compareSync(password, user.password)) {
         return res.json({ ok: false, data: null, message: "Password error" });
       }
