@@ -5,10 +5,13 @@ postController.createPost = async (req, res) => {
   let { user } = req.params;
   let { title, content } = req.body;
 
+  let date = new Date();
+
   let NEW_POST = await new POST({
     user,
     title,
     content,
+    date,
   });
 
   NEW_POST.save()
@@ -64,7 +67,7 @@ postController.updatePost = async (req, res) => {
 postController.deletePost = async (req, res) => {
   let { user, post } = req.params;
 
-  POST.findOneAndDelete({ user, _id:post })
+  POST.findOneAndDelete({ user, _id: post })
     .then((post) => {
       if (post === null) {
         return res.json({

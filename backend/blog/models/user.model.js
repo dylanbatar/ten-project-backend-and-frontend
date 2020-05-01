@@ -15,6 +15,7 @@ const userModel = new SCHEMA({
     unique: true,
   },
   post: [{ type: SCHEMA.Types.ObjectId, ref: "post" }],
+  password: { type: String, minlength: 3 },
 });
 
 module.exports = MONGOOSE.model("user", userModel);

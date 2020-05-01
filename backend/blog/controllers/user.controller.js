@@ -1,13 +1,16 @@
 const USER = require("../models/user.model");
 const POST = require("../models/post.model");
+const BCRYPT = require("bcrypt");
+
 let userController = {};
 
-userController.createUser = async (req, res) => {
-  let { username, email } = req.body;
+userController.registerUser = async (req, res) => {
+  let { username, email, password } = req.body;
 
   const NEW_USER = await new USER({
     username,
     email,
+    password: BCRYPT.hashSync(password, 10),
   });
 
   NEW_USER.save()
@@ -15,14 +18,43 @@ userController.createUser = async (req, res) => {
       res.json({
         ok: true,
         data: user,
-        message: "Usuario creado correctamente",
+        message: "User created succesfully",
       });
     })
     .catch((err) => {
       res.json({
         ok: false,
         data: null,
-        message: "Error en al creacion",
+        message: "Error",
+        error: err,
+      });
+    });
+};
+
+userController.loginUser = async (req, res) => {
+  let { username, email, password } = req.body;
+
+  USER.findOne({ $or: [{ username }, { email }] })
+    .then((user) => {
+      if (user === null) {
+        return res.json({
+          ok: false,
+          data: null,
+          message: "Email o username not found",
+        });
+      }
+
+      if (!BCRYPT.compareSync(password, user.password)) {
+        return res.json({ ok: false, data: null, message: "Password error" });
+      }
+
+      res.json({ ok: true, data: user, message: `Welcome ${user.username}` });
+    })
+    .catch((err) => {
+      return res.json({
+        ok: false,
+        data: null,
+        message: "Somenthing is wrong",
         error: err,
       });
     });
