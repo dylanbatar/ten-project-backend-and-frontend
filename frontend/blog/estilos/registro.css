@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../assets/fondologin.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    padding: 50px 0 20px;
+}
+
+.titulo h1 {
+    margin: 0;
+    padding: 0;
+    color: #262626;
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.container {
+    width: 50%;
+    height: 400px;
+    background: #fff;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+}
+
+.container .left {
+    float: left;
+    width: 50%;
+    height: 400px;
+    background: url(../assets/fondologin.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.container .right {
+    float: right;
+    width: 50%;
+    height: 400px;
+    box-sizing: border-box;
+}
+
+.caja {
+    width: 100%;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    height: 400px;
+    background: #fff;
+}
+
+.caja p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #96ddf1;
+}
+
+.caja input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.caja input[type="text"],
+.caja input[type="password"],
+.caja input[type="email"] {
+    border: none;
+    border-bottom: 2px solid #96ddf1;
+    outline: none;
+    height: 40px;
+}
+
+.caja input[type="text"]:focus,
+.caja input[type="password"]:focus,
+.caja input[type="email"]:focus {
+    border-bottom: 2px solid #96ddf1;
+}
+
+.caja input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    background: #262626;
+    cursor: pointer;
+}
+
+.caja input[type="submit"]:hover {
+    background: #96ddf1;
+}

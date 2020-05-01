@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ebf5fc;
+}
+
+.container {
+    width: 50%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 602px);
+    column-gap: 4rem;
+}
+
+.six .columns {
+    position: relative;
+}
+
+h2 {
+    text-align: center!important;
+    color: #c7c7c7;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.form {
+    border-radius: 10px;
+    background: #ebf5fc;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1), 6px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form:hover {
+    box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5), inset 6px 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: #c7c7c7;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.boton {
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    color: black;
+    font-size: 18px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 1rem;
+}
+
+.content:first-child {
+    padding-top: 1rem;
+}
+
+.icono {
+    width: 7em;
+    height: 2rem;
+}
+
+.act {
+    width: 22rem;
+}
